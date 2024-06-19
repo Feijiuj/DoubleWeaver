@@ -175,7 +175,7 @@ namespace DoubleWeaver
                             laggingTime = Math.Min(LastRTT, 300);
                         }
                         var serverAnimationLock = actionEffect.AnimationLockDuration * 1000;
-                        float animationLock = Math.Max(serverAnimationLock - laggingTime, 300);
+                        float animationLock = Math.Max(300, 300);
                         byte[] bytes = BitConverter.GetBytes(animationLock / 1000);
                         Marshal.Copy(bytes, 0, a4 + 16, bytes.Length);
                         string logLine = $"Status ActionId:{actionEffect.ActionId} Sequence:{actionEffect.SourceSequence} " +
